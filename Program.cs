@@ -5,16 +5,25 @@
 
 string[] array1 = { "Hello", "2", "world", ":-)" };
 string[] array2 = new string[array1.Length];
-int count = 0;
-for (int i = 0; i < array1.Length; i++)
+void SecondArray(string[] array1, string[] array2)
 {
-    if (array1[i].Length <= 3)
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
     {
-        array2[count] = array1[i];
-        count++;
+        if (array1[i].Length <= 3)
+        {
+            array2[count] = array1[i];
+            count++;
+        }
     }
 }
-for (int i = 0; i < array2.Length; i++)
+void PrintArray(string[] array)
 {
-    Console.WriteLine(array2[i]);
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
 }
+
+SecondArray(array1, array2);
+PrintArray(array2);
